@@ -1,46 +1,58 @@
-//old fashioned
-// $.ajax({
-//     url: 'http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen',
-//     success: (response) => {
-//         console.log(response);
-
-//     }
-// })
-// 
-//The modern way which executes in order
-
-// const promise = $.ajax({
-//     url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
-// });
-
-// promise.then(
-//     (data)=>{
-//         console.log(data);
-//     },
-//     ()=>{
-//         console.log('bad request');
-//     }
-// );
-
-//or even better
 
 
+//ae6868eb-a85d-4057-90cb-e2bfa99f07a9
+//https://content.guardianapis.com/?api-key=ae6868eb-a85d-4057-90cb-e2bfa99f07a9
 
-// const hello = $.ajax('https://newsapi.org/v2/top-headlines?country=us&apiKey=2f4f60fc84de4a6aaae4e07490128f32');
+$('form').on('submit', (event)=>{
 
-//     console.log(hello)
+    event.preventDefault();
 
-    const promise = $.ajax({
-            url: 'https://data.cityofchicago.org/resource/t62e-8nvc.json'
-        });
-        
-        promise.then(
-            (data)=>{
-                console.log(data);
-            },
-            ()=>{
-                console.log('bad request');
-            }
-        );
+    const news = $('input[type="text"]').val();
     
 
+
+$.ajax({
+    url: `https://content.guardianapis.com/search?q=${news}&api-key=ae6868eb-a85d-4057-90cb-e2bfa99f07a9`,
+
+    
+}).then(
+    (data)=>{
+        console.log(data)
+         
+        // $('#newsBrief').html(data.response.results[0].webTitle);
+
+        // $('#newsUrl').html(data.response.results.webUrl);
+
+        // ${result.webUrl}
+
+        for (let result of data.response.results) {
+
+            // 
+
+            const $news = $(`<p>Title: ${result.webTitle} </p>`)
+            const $url= $(`<p> ${result.webUrl} </p>`)
+            $news.addClass('news')
+            $url.addClass('url')
+            
+
+            $('.leftDiv').append($news)
+            $news.append($url)
+           
+
+        
+        }
+        const url = `${result.webUrl}.css('background-color', 'red')`
+        
+    },
+
+        
+    ()=>{ 
+        console.log('bad request');
+    }
+    );
+})
+
+
+
+        
+        

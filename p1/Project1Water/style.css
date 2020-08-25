@@ -1,0 +1,35 @@
+.news {
+    background-color: yellow;
+}
+.url {
+    color: rgb(0, 147, 245);
+    background-color: rgb(248, 206, 191);
+}
+
+
+body {
+    background-color: rgb(248, 206, 191);
+}
+
+.leftDiv {
+  float: left;
+  width: 850px;
+  height: 730px;
+  margin: 10px 10px 10px 0;
+  padding: 10px;
+  color: #030000;
+  border: darkblue;
+  
+
+}
+
+.rightDiv {
+    float: right;
+    width: 522px;
+    height: 730px;
+    margin: 10px 71px 10px 0;
+    padding: 10px;
+    color: #030000;
+    background-color: brown
+  
+  }
