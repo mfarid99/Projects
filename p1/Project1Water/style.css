@@ -8,12 +8,12 @@
 
 
 body {
-    background-color: rgb(248, 206, 191);
+    /* background-color: rgb(248, 206, 191); */
 }
 
 .leftDiv {
   float: left;
-  width: 850px;
+  width: 830px;
   height: 730px;
   margin: 10px 10px 10px 0;
   padding: 10px;
@@ -25,11 +25,25 @@ body {
 
 .rightDiv {
     float: right;
-    width: 522px;
-    height: 730px;
-    margin: 10px 71px 10px 0;
+    width: 365px;
+    height: 672px;
+    margin: 29px 71px 10px 0;
     padding: 10px;
     color: #030000;
     background-color: brown
   
+  }
+
+  .newstand {
+      object-fit: cover;
+
+  }
+
+  .newstand {
+      object-fit: cover;
+      width: 1337px;
+  }
+
+  h1, form {
+      text-align: center;
   }

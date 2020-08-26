@@ -29,8 +29,9 @@ $.ajax({
 
             // 
 
-            const $news = $(`<p>Title: ${result.webTitle} </p>`)
-            const $url= $(`<p> ${result.webUrl} </p>`)
+            const $news = $(`<p>Article: ${result.webTitle} </p>`)
+            const $url= $(`<p>`)
+            $url.html (`<a href = {result.webUrl}> ${result.webUrl} </a>`)
             $news.addClass('news')
             $url.addClass('url')
             
@@ -41,7 +42,7 @@ $.ajax({
 
         
         }
-        const url = `${result.webUrl}.css('background-color', 'red')`
+        // const url = `${result.webUrl}.css('background-color', 'red')
         
     },
 
