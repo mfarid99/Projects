@@ -3,7 +3,7 @@
 //ae6868eb-a85d-4057-90cb-e2bfa99f07a9
 //https://content.guardianapis.com/?api-key=ae6868eb-a85d-4057-90cb-e2bfa99f07a9
 
-var width = 720;
+    var width = 720;
     var animationSpeed = 1000;
     var pause = 3000;
     var currentSlide = 1;
@@ -21,6 +21,7 @@ var width = 720;
                 if (++currentSlide === $slides.length) {
                     currentSlide = 1;
                     $slideContainer.css('margin-left', 0);
+                    
                 }
             });
         }, pause);
@@ -35,10 +36,16 @@ var width = 720;
 
     startSlider();
 
+    
+
 $('form').on('submit', (event)=>{
 
     event.preventDefault();
-    $('.guardiangen').fadeOut(2000)
+    $('.guardiangen').fadeOut(2000);
+    $('.leftDiv').css({"background-image": "linear-gradient( rgb(233, 229, 229), rgb(233, 227, 227))", "box-shadow": "5px 5px grey"}).fadeIn(4000);
+    
+
+
 
     const news = $('input[type="text"]').val();
 
@@ -74,6 +81,26 @@ $('form').on('submit', (event)=>{
 
             $('.leftDiv').append($news)
             $news.append($url)
+
+            // $news.hover(function(event){
+            //     $(this).css('background-color', 'yellow'); 
+            //     {
+            //         $news.hover(function(){
+            //     $(this).css('background-color', '')
+            //         })
+            //     }
+                
+            // })
+
+            $news.mouseenter(function() {
+                $news.css('font-size', '1.25em')
+                 
+            }) 
+            $news.mouseleave(function() {
+                $news.css('font-size', '')
+                
+
+            })
            
 
         
