@@ -1,23 +1,28 @@
 
 
-//ae6868eb-a85d-4057-90cb-e2bfa99f07a9
-//https://content.guardianapis.com/?api-key=ae6868eb-a85d-4057-90cb-e2bfa99f07a9
 
-    var width = 720;
-    var animationSpeed = 1000;
-    var pause = 3000;
-    var currentSlide = 1;
 
-    //cache DOM elements
-    var $slider = $('#slider');
-    var $slideContainer = $('.slides', $slider);
-    var $slides = $('.slide', $slider);
+    const entsub = (myform) => {
+    if (window.event && window.event.keyCode == 13)
+    myform.submit();
+    else
+    return true;}
 
-    var interval;
+    let width = 720;
+    let animationSpeed = 1000;
+    let pause = 3000;
+    let currentSlide = 1;
 
-    function startSlider() {
-        interval = setInterval(function() {
-            $slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function() {
+    
+    let $slider = $('#slider');
+    let $slideContainer = $('.slides', $slider);
+    let $slides = $('.slide', $slider);
+
+    let interval;
+
+    const startSlider=() => {
+        interval = setInterval(() => {
+            $slideContainer.animate({'margin-left': '-='+width}, animationSpeed, () => {
                 if (++currentSlide === $slides.length) {
                     currentSlide = 1;
                     $slideContainer.css('margin-left', 0);
@@ -26,7 +31,7 @@
             });
         }, pause);
     }
-    function pauseSlider() {
+     pauseSlider =() => {
         clearInterval(interval);
     }
 
@@ -44,14 +49,7 @@ $('form').on('submit', (event)=>{
     $('.guardiangen').fadeOut(2000);
     $('.leftDiv').css({"background-image": "linear-gradient( rgb(233, 229, 229), rgb(233, 227, 227))", "box-shadow": "5px 5px grey"}).fadeIn(4000);
     
-
-
-
     const news = $('input[type="text"]').val();
-
-   
-    
-
 
     $.ajax({
     url: `https://content.guardianapis.com/search?q=${news}&api-key=ae6868eb-a85d-4057-90cb-e2bfa99f07a9`,
@@ -60,21 +58,13 @@ $('form').on('submit', (event)=>{
     }).then(
         (data)=>{
         console.log(data)
-         
-        // $('#newsBrief').html(data.response.results[0].webTitle);
-
-        // $('#newsUrl').html(data.response.results.webUrl);
-
-        // ${result.webUrl}
 
         for (let result of data.response.results) {
 
-            // 
-
-            const $news = $(`<p>Article: ${result.webTitle} </p>`)
+            const $news = $(`<p> Article: ${result.webTitle} </p>`)
             const $url= $(`<p>`)
             $url.html (`<a href = ${result.webUrl}> ${result.webUrl}  </a>`);
-            // $url.html (`<a href={result.webUrl}>${result.webUrl}</a>`)
+            
             $news.addClass('news')
             $url.addClass('url')
             
@@ -82,30 +72,19 @@ $('form').on('submit', (event)=>{
             $('.leftDiv').append($news)
             $news.append($url)
 
-            // $news.hover(function(event){
-            //     $(this).css('background-color', 'yellow'); 
-            //     {
-            //         $news.hover(function(){
-            //     $(this).css('background-color', '')
-            //         })
-            //     }
-                
-            // })
-
             $news.mouseenter(function() {
-                $news.css('font-size', '1.25em')
+                $news.css({'font-size': '1.25em', 'color': 'red'});
+                $('.url').css({'font-size': '1em', 'color': 'green'})
                  
             }) 
             $news.mouseleave(function() {
-                $news.css('font-size', '')
-                
+                $news.css({'font-size': '', 'color': ''})
+                $('.url').css({'font-size': '1em', 'color': ''})
 
             })
            
-
         
         }
-        // const url = `${result.webUrl}.css('background-color', 'red')
         
     },
     
