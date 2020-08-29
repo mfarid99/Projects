@@ -1,6 +1,8 @@
 # projects
 Project 1 comments: 
 
+Link to project http://127.0.0.1:5500/index.html
+
 I created a News Search website "The Digital Newsstand" through The API offered by the Atlantic newspaper. The first challenge was to find a useful API. Some were scams portraying free API's and when you try to get a key, they are asking for a credit card. Lesson learned. 
 Originally, I was supposed to pull data through Kelly Blue Book API but they never responded to my request. 
 One of the valuable lessons I learned was to read the API instructions re how to use it. I did not know where to insert ${news} in the url to pull the data but it makes sense now. Look for the "q="...more or less. 
@@ -14,7 +16,7 @@ When you hover over the articles/link, the font size increase and the articles t
 
 I also researched a function that makes the submit button works when Enter is pushed. That was exciting. 
 
-The second DIV is a slideshow outlining some of the content that the website offer such as news related to politics, sports, elections, entertainment..etc with a photo representing every them. I tried everything in my power to have the description of each slide at the bottom or on top of the images but it would not work no matter what I do. 
+The second DIV is a slideshow outlining some of the content that the website offer such as news related to politics, sports, elections, entertainment..etc with a photo representing every them. I tried everything in my power to have the description of each slide at the bottom or on top of the images but it would not work no matter what I do. When the mouse hovers over the div, it stops moving and resumes after moving the mouse off. 
 
 I also created a background that covers the entire page iwth a traditional classic newsstand image. I changed the opacity so that it does not distract or overcrowd the rest of the page. 
 
