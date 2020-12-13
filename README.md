@@ -1,7 +1,7 @@
 # projects
 Project 1 comments: 
 
-Link to project http://127.0.0.1:5500/index.html
+Link to project https://moenewsapp.herokuapp.com/
 
 I created a News Search website "The Digital Newsstand" through The API offered by the Atlantic newspaper. The first challenge was to find a useful API. Some were scams portraying free API's and when you try to get a key, they are asking for a credit card. Lesson learned. 
 Originally, I was supposed to pull data through Kelly Blue Book API but they never responded to my request. 
